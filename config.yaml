@@ -1,0 +1,19 @@
+path: /home/kasra/PycharmProjects/YOLOv8_customize/data
+
+train: /home/kasra/PycharmProjects/YOLOv8_customize/data/train/images
+
+val: /home/kasra/PycharmProjects/YOLOv8_customize/data/validation/images
+
+names:
+  0: back_national_card
+  1: birth_date
+  2: expiration_date
+  3: family_name
+  4: father_name
+  5: front_national_card
+  6: image
+  7: name
+  8: national_number
+  9: new_birth_certificate
+  10: old_birth_certificate
+  11: serial_number
