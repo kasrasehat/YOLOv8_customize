@@ -21,19 +21,20 @@ def save_image(image, path):
     # Save the image
     cv2.imwrite(path, image)
 
-# device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-model = YOLO("/home/kasra/PycharmProjects/YOLOv8_customize/runs/detect/train/weights/best.pt")  # load a pretrained model (recommended for training)
-img = '/home/kasra/kasra_files/data-shenasname/ai_files_20230726_1/2590454252_0.jpg'  # or file, Path, PIL, OpenCV, numpy, list
+
+model = YOLO("/home/kasra/PycharmProjects/YOLOv8_customize/runs/segment/predict_val/weights/best.pt")  # load a pretrained model (recommended for training)
+img = '/home/kasra/kasra_files/data-shenasname/ai_files_20230606/0010049681_0.jpg'  # or file, Path, PIL, OpenCV, numpy, list
 image = cv2.imread(img)
-new_width = 640
-new_height = 640
+new_width = 720
+new_height = 720
 # Resize the image
 image = cv2.resize(image, (new_width, new_height))
 # Inference
-img = '/home/kasra/PycharmProjects/YOLOv8_customize/extra_files/image2.jpg'
+img = '/home/kasra/PycharmProjects/YOLOv8_customize/extra_files/image1.jpg'
 
 save_image(image, img)
-results = model.predict(img, save=True, imgsz=640, conf=0.3, save_txt=True)
+results = model.predict(img, save=True, imgsz=640, conf=0.3, save_txt=True, show=False)
 print(results[0].boxes.data) # returns xyxy of bounding box + confidence and class number
+
 # Results
 # results.print()  # or .show(), .save(), .crop(), .pandas(), etc.
