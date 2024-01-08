@@ -1,8 +1,7 @@
-from ultralytics import YOLO
-import torch
-from torchsummary import summary
-import cv2
 import os
+
+import cv2
+from ultralytics import YOLO
 
 
 def save_image(image, path):
